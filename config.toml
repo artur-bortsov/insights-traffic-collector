@@ -1,0 +1,32 @@
+# GitHub Insights Traffic Collector — configuration
+# Edit this file to set your GitHub token and preferred output location.
+
+[github]
+# Path to a plain-text file that contains your GitHub personal access token
+# (one line, no extra whitespace).  The token needs at least the 'repo' scope
+# so the Traffic API is accessible.
+# Create or manage tokens at: https://github.com/settings/tokens
+token_file = "~/.github-token"
+
+# Alternatively, you can paste the token directly here (less secure, since
+# config.toml may be stored in version control):
+# token = "ghp_xxxx"
+
+# The GITHUB_TOKEN environment variable always takes highest priority and can
+# be used instead of either option above.
+
+[output]
+# Directory where the CSV data file and generated XLSX reports will be stored.
+# Tilde (~) is expanded to the current user's home directory.
+directory = "~/Documents/GitHubInsights"
+
+[chart]
+# Number of calendar months to show in the time-series charts.
+# The Data sheet in the XLSX contains only this many months of pivoted data.
+# All-time totals in the Summary block are unaffected by this setting.
+months = 6
+
+# Set to true to regenerate the XLSX report automatically after every
+# data-collection run.  Set to false to generate reports on demand only
+# (run generate_report.py manually whenever you need a fresh report).
+auto_report = true

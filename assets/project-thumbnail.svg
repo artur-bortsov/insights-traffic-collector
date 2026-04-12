@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="btitle bdesc">
+  <title id="btitle">GitHub Insights Traffic Collector</title>
+  <desc id="bdesc">Collect daily GitHub repository traffic, accumulate unlimited history in a CSV file, and auto-generate XLSX reports with charts for all repos.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#080f1f"/>
+      <stop offset="100%" stop-color="#0d1235"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="500" fill="url(#bg)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="160"  cy="100" rx="260" ry="160" fill="#6366f1" fill-opacity="0.24" filter="url(#blur)"/>
+  <ellipse cx="980"  cy="40"  rx="190" ry="120" fill="#38bdf8" fill-opacity="0.16" filter="url(#blur)"/>
+  <ellipse cx="1020" cy="440" rx="260" ry="170" fill="#6366f1" fill-opacity="0.16" filter="url(#blur)"/>
+
+  <!-- Diagonal lines (right panel area) -->
+  <g opacity="0.10" stroke="#ffffff" stroke-width="1">
+    <line x1="640"  y1="48" x2="534"  y2="458"/>
+    <line x1="695"  y1="48" x2="589"  y2="458"/>
+    <line x1="750"  y1="48" x2="644"  y2="458"/>
+    <line x1="805"  y1="48" x2="699"  y2="458"/>
+    <line x1="860"  y1="48" x2="754"  y2="458"/>
+    <line x1="915"  y1="48" x2="809"  y2="458"/>
+    <line x1="970"  y1="48" x2="864"  y2="458"/>
+    <line x1="1025" y1="48" x2="919"  y2="458"/>
+    <line x1="1080" y1="48" x2="974"  y2="458"/>
+    <line x1="1135" y1="48" x2="1029" y2="458"/>
+  </g>
+
+  <!-- Horizontal gridlines; x2=1150 matches the panel right edge -->
+  <g opacity="0.07" stroke="#ffffff" stroke-width="1">
+    <line x1="600" y1="90"  x2="1150" y2="90"/>
+    <line x1="600" y1="136" x2="1150" y2="136"/>
+    <line x1="600" y1="182" x2="1150" y2="182"/>
+    <line x1="600" y1="228" x2="1150" y2="228"/>
+    <line x1="600" y1="274" x2="1150" y2="274"/>
+    <line x1="600" y1="320" x2="1150" y2="320"/>
+    <line x1="600" y1="366" x2="1150" y2="366"/>
+    <line x1="600" y1="412" x2="1150" y2="412"/>
+    <line x1="600" y1="458" x2="1150" y2="458"/>
+  </g>
+
+  <g font-family="Inter, Arial, Helvetica, sans-serif">
+
+    <!-- ── Left panel ───────────────────────────────────────────────── -->
+
+    <!-- Category badge: x=72, width=228, centre x=72+114=186 -->
+    <rect x="72" y="52" width="228" height="36" rx="18"
+          fill="#091223" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.28"/>
+    <text x="186" y="76" text-anchor="middle"
+          fill="#c4d6ec" font-size="17" font-weight="700">GitHub → Analytics</text>
+
+    <!-- Title (3 lines, 66 px) -->
+    <text x="72" y="158" fill="#f5f9ff" font-size="66" font-weight="800">GitHub</text>
+    <text x="72" y="230" fill="#f5f9ff" font-size="66" font-weight="800">Insights</text>
+    <text x="72" y="302" fill="#f5f9ff" font-size="66" font-weight="800">Collector</text>
+
+    <!-- Accent underline — x matches title x=72 -->
+    <rect x="72" y="320" width="180" height="7" rx="3" fill="#6366f1"/>
+
+    <!-- Description -->
+    <text x="72" y="364" fill="#f5f9ff" font-size="22" font-weight="600">Collect daily traffic from all repos.</text>
+    <text x="72" y="390" fill="#f5f9ff" font-size="22" font-weight="600">Accumulate history. Analyse trends.</text>
+    <text x="72" y="424" fill="#c4d6ec" font-size="15">Python · scheduled · CSV history · XLSX charts</text>
+
+    <!-- Feature pills -->
+    <!-- Pill 1: x=72, w=170, centre=157 -->
+    <rect x="72"  y="448" width="170" height="34" rx="16"
+          fill="#091223" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.28"/>
+    <text x="157" y="470" text-anchor="middle"
+          fill="#f5f9ff" font-size="14" font-weight="700">Daily auto-collect</text>
+    <!-- Pill 2: x=256, w=120, centre=316 -->
+    <rect x="256" y="448" width="120" height="34" rx="16"
+          fill="#091223" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.28"/>
+    <text x="316" y="470" text-anchor="middle"
+          fill="#f5f9ff" font-size="14" font-weight="700">CSV history</text>
+    <!-- Pill 3: x=390, w=120, centre=450 -->
+    <rect x="390" y="448" width="120" height="34" rx="16"
+          fill="#091223" fill-opacity="0.55" stroke="#ffffff" stroke-opacity="0.28"/>
+    <text x="450" y="470" text-anchor="middle"
+          fill="#f5f9ff" font-size="14" font-weight="700">XLSX charts</text>
+
+    <!-- ── Right panel ──────────────────────────────────────────────── -->
+    <!-- x=610, y=72, width=540 (→ x=1150), height=392 (→ y=464)       -->
+    <!-- Left margin inside panel = 36 px (first card x = 646)          -->
+    <!-- Right margin inside panel = 36 px (last card right = 1114)     -->
+    <rect x="610" y="72" width="540" height="392" rx="28"
+          fill="#080e24" fill-opacity="0.84" stroke="#5b68c7" stroke-opacity="0.38"/>
+
+    <text x="646" y="118" fill="#f5f9ff" font-size="24" font-weight="700">How it works</text>
+    <text x="646" y="145" fill="#c4d6ec" font-size="15">One daily run fetches traffic, appends to</text>
+    <text x="646" y="163" fill="#c4d6ec" font-size="15">CSV, and regenerates the XLSX report.</text>
+
+    <!-- Card 1: GitHub API — amber #ffaa54 (x=646, centre x=712) -->
+    <g>
+      <rect x="646" y="186" width="132" height="128" rx="20"
+            fill="#0c1432" fill-opacity="0.92" stroke="#ffaa54" stroke-opacity="0.74" stroke-width="2"/>
+      <!-- Top bar: y=200, h=7, bottom=207 -->
+      <rect x="662" y="200" width="100" height="7" rx="3" fill="#ffaa54"/>
+      <!-- Indicator circle: cy = bar_bottom(207) + r(10) = 217 -->
+      <circle cx="682" cy="217" r="9" fill="#ffaa54" fill-opacity="0.18" stroke="#ffaa54"/>
+      <text x="712" y="248" text-anchor="middle" fill="#f5f9ff" font-size="20" font-weight="700">GitHub</text>
+      <text x="712" y="270" text-anchor="middle" fill="#f5f9ff" font-size="20" font-weight="700">API</text>
+      <text x="712" y="294" text-anchor="middle" fill="#c4d6ec" font-size="13">Views &amp;</text>
+      <text x="712" y="308" text-anchor="middle" fill="#c4d6ec" font-size="13">clones</text>
+    </g>
+
+    <!-- Card 2: CSV Store — indigo #6366f1 (x=814, centre x=880) -->
+    <g>
+      <rect x="814" y="186" width="132" height="128" rx="20"
+            fill="#0c1432" fill-opacity="0.92" stroke="#6366f1" stroke-opacity="0.74" stroke-width="2"/>
+      <rect x="830" y="200" width="100" height="7" rx="3" fill="#6366f1"/>
+      <circle cx="850" cy="217" r="9" fill="#6366f1" fill-opacity="0.18" stroke="#6366f1"/>
+      <text x="880" y="248" text-anchor="middle" fill="#f5f9ff" font-size="20" font-weight="700">CSV</text>
+      <text x="880" y="270" text-anchor="middle" fill="#f5f9ff" font-size="20" font-weight="700">Store</text>
+      <text x="880" y="294" text-anchor="middle" fill="#c4d6ec" font-size="13">Appends,</text>
+      <text x="880" y="308" text-anchor="middle" fill="#c4d6ec" font-size="13">deduplicates</text>
+    </g>
+
+    <!-- Card 3: XLSX Charts — sky blue #38bdf8 (x=982, centre x=1048) -->
+    <g>
+      <rect x="982" y="186" width="132" height="128" rx="20"
+            fill="#0c1432" fill-opacity="0.92" stroke="#38bdf8" stroke-opacity="0.74" stroke-width="2"/>
+      <rect x="998" y="200" width="100" height="7" rx="3" fill="#38bdf8"/>
+      <circle cx="1018" cy="217" r="9" fill="#38bdf8" fill-opacity="0.18" stroke="#38bdf8"/>
+      <text x="1048" y="248" text-anchor="middle" fill="#f5f9ff" font-size="20" font-weight="700">XLSX</text>
+      <text x="1048" y="270" text-anchor="middle" fill="#f5f9ff" font-size="20" font-weight="700">Charts</text>
+      <text x="1048" y="294" text-anchor="middle" fill="#c4d6ec" font-size="13">All repos,</text>
+      <text x="1048" y="308" text-anchor="middle" fill="#c4d6ec" font-size="13">every run</text>
+    </g>
+
+    <!-- Arrows between cards -->
+    <g fill="none" stroke-linecap="round" stroke-width="5">
+      <!-- Arrow 1→2 (amber): card1.right=778, card2.left=814, gap=36 -->
+      <line x1="778" y1="250" x2="804" y2="250" stroke="#ffaa54"/>
+      <polygon points="804,250 791,242 791,258" fill="#ffaa54" stroke="none"/>
+      <!-- Arrow 2→3 (indigo): card2.right=946, card3.left=982, gap=36 -->
+      <line x1="946" y1="250" x2="972" y2="250" stroke="#6366f1"/>
+      <polygon points="972,250 959,242 959,258" fill="#6366f1" stroke="none"/>
+    </g>
+
+    <!-- Bottom caption -->
+    <text x="646" y="354" fill="#c4d6ec" font-size="15">Scheduled daily collection keeps CSV growing;</text>
+    <text x="646" y="372" fill="#c4d6ec" font-size="15">XLSX charts refresh automatically each run.</text>
+
+    <!-- Info row: language · platform · licence -->
+    <text x="646" y="444" fill="#c4d6ec" font-size="13" fill-opacity="0.7">Python  ·  macOS · Linux · Windows  ·  GPL-3.0</text>
+
+  </g>
+</svg>

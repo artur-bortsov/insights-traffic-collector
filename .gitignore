@@ -1,0 +1,14 @@
+# Token files — never commit credentials
+git-token.txt
+*.token
+.github-token
+
+# Generated data files — kept locally, not in the repo
+*.csv
+*.xlsx
+
+# Python virtual environment (created by the installer)
+venv/
+__pycache__/
+*.pyc
+*.pyo

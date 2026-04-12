@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="stitle sdesc">
+  <title id="stitle">GitHub Insights Traffic Collector</title>
+  <desc id="sdesc">Collect daily GitHub traffic for all your repos. Build unlimited history. Auto-generate XLSX reports with charts.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#080f1f"/>
+      <stop offset="100%" stop-color="#0d1235"/>
+    </linearGradient>
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="52"/>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- Ambient glows -->
+  <ellipse cx="220"  cy="180" rx="420" ry="280" fill="#6366f1" fill-opacity="0.24" filter="url(#blur)"/>
+  <ellipse cx="1060" cy="460" rx="420" ry="280" fill="#38bdf8" fill-opacity="0.18" filter="url(#blur)"/>
+  <ellipse cx="680"  cy="80"  rx="320" ry="200" fill="#6366f1" fill-opacity="0.12" filter="url(#blur)"/>
+
+  <!-- Subtle horizontal accent line -->
+  <line x1="40" y1="420" x2="1240" y2="420" stroke="#6366f1" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- All content centred at x=640, font uses Arial first (Latin), Apple Symbols as fallback (for →) -->
+  <g font-family="Arial, Apple Symbols, sans-serif" text-anchor="middle">
+
+    <!-- Category badge: x=510, w=260, centre=640 -->
+    <rect x="510" y="105" width="260" height="40" rx="20"
+          fill="#091223" fill-opacity="0.62" stroke="#6366f1" stroke-opacity="0.50"/>
+    <text x="640" y="131" fill="#c4d6ec" font-size="18" font-weight="700">GitHub → Analytics</text>
+
+    <!-- Title -->
+    <text x="640" y="244" fill="#f5f9ff" font-size="64" font-weight="800">GitHub Insights</text>
+    <text x="640" y="322" fill="#f5f9ff" font-size="64" font-weight="800">Collector</text>
+
+    <!-- Tagline -->
+    <text x="640" y="386" fill="#c4d6ec" font-size="28">Daily traffic → unlimited history → XLSX charts.</text>
+
+    <!-- Feature pills, total width 218+24+160+24+160=586, centre at x=640 -->
+    <!-- Pill 1: x=347, w=218, centre=456 -->
+    <rect x="347" y="452" width="218" height="44" rx="22"
+          fill="#091223" fill-opacity="0.62" stroke="#ffffff" stroke-opacity="0.22"/>
+    <text x="456" y="480" fill="#f5f9ff" font-size="17" font-weight="700">Daily auto-collect</text>
+    <!-- Pill 2: x=589, w=160, centre=669 -->
+    <rect x="589" y="452" width="160" height="44" rx="22"
+          fill="#091223" fill-opacity="0.62" stroke="#ffffff" stroke-opacity="0.22"/>
+    <text x="669" y="480" fill="#f5f9ff" font-size="17" font-weight="700">CSV history</text>
+    <!-- Pill 3: x=773, w=160, centre=853 -->
+    <rect x="773" y="452" width="160" height="44" rx="22"
+          fill="#091223" fill-opacity="0.62" stroke="#ffffff" stroke-opacity="0.22"/>
+    <text x="853" y="480" fill="#f5f9ff" font-size="17" font-weight="700">XLSX charts</text>
+
+    <!-- Repository URL -->
+    <text x="640" y="576" fill="#c4d6ec" font-size="16" fill-opacity="0.55">github.com/artur-bortsov/insights-traffic-collector</text>
+
+  </g>
+</svg>
