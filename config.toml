@@ -20,6 +20,17 @@ token_file = "~/.github-token"
 # Tilde (~) is expanded to the current user's home directory.
 directory = "~/Documents/GitHubInsights"
 
+[network]
+# Resilience settings for the GitHub API requests.  The defaults are used when
+# this whole section is omitted, so an older config file keeps working.
+# timeout      — seconds to wait for a single request before giving up on it
+# retries      — total attempts per request (1 initial attempt + the retries)
+# retry_delay  — seconds before the first retry; doubled after every attempt
+#                (5 → 10 → 20 with the default of 4 attempts)
+timeout = 30
+retries = 4
+retry_delay = 5
+
 [chart]
 # Number of calendar months to show in the time-series charts.
 # The Data sheet in the XLSX contains only this many months of pivoted data.

@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] — 2026-09-11
+
+### Added
+- Automatic retries with exponential backoff for every GitHub API request
+  (4 attempts, 5 → 10 → 20 s by default). Connection timeouts, dropped
+  connections, DNS errors and the temporary HTTP statuses 429, 500, 502,
+  503 and 504 are retried instead of aborting the run.
+- New optional `[network]` section in `config.toml` — `timeout`, `retries`
+  and `retry_delay`. Existing config files without the section keep
+  working with the built-in defaults.
+
+### Changed
+- A repository that stays unreachable after all retries is now skipped
+  with a warning; the data collected for the remaining repositories is
+  written to the CSV and the XLSX report is still regenerated.
+- Unrecoverable API failures are logged as a single readable line instead
+  of a Python traceback.
+- The script exits with a non-zero status when the run was incomplete, so
+  launchd / systemd / Task Scheduler still report the failure.
+
+### Fixed
+- A single transient network timeout no longer aborts the whole scheduled
+  run, which previously left multi-day gaps in the collected data.
+- Corrected a truncated sentence in the README introduction.
+
+---
+
 ## [1.0.0] — 2026-04-12
 
 ### Added

@@ -2,8 +2,8 @@
 
 ![GitHub Insights Traffic Collector](assets/project-thumbnail.svg)
 
-A lightweight tool
-(views and clones) for all your owned repositories and stores it in a
+A lightweight tool that collects your daily GitHub traffic statistics
+(views and clones) for all your owned repositories and stores them in a
 local CSV file that accumulates indefinitely.
 
 After each collection run a two-sheet XLSX workbook is regenerated
@@ -27,6 +27,22 @@ On each run the script:
 The CSV file is named `insights-traffic-<github-username>.csv` and is
 placed in the configured output directory (`~/Documents/GitHubInsights/`
 by default).
+
+### Network resilience
+
+Brief network glitches are common on a machine that wakes from sleep or
+switches networks. Every GitHub API request is therefore retried with an
+exponentially growing pause (4 attempts, 5 → 10 → 20 s by default), and
+temporary server responses (429, 500, 502, 503, 504) are retried too.
+
+If a single repository still cannot be fetched, it is skipped with a
+warning instead of aborting the run — the data collected for the other
+repositories is written to the CSV and the report is regenerated. The
+script then exits with a non-zero status so the scheduler still reports
+the run as incomplete.
+
+The retry behaviour is configurable in the `[network]` section of
+`config.toml`.
 
 ### Report workbook (`generate_report.py`)
 
@@ -133,6 +149,13 @@ token_file = "~/.github-token"
 [output]
 # Directory where the CSV and XLSX files will be stored.
 directory = "~/Documents/GitHubInsights"
+
+[network]
+# Resilience settings for the GitHub API requests (the whole section is
+# optional — these values are the built-in defaults).
+timeout = 30       # seconds to wait for a single request
+retries = 4        # total attempts per request (1 initial + 3 retries)
+retry_delay = 5    # seconds before the first retry, doubled each time
 
 [chart]
 # Number of calendar months to show in the time-series charts.
